@@ -41,8 +41,24 @@ const Tab = createBottomTabNavigator()
 const Drawer = createDrawerNavigator(); 
 function  App  () {
   return (
-      <Drawer.Navigator initialRouteName="Home">
-        <Drawer.Screen name="Home" component={Home} />
+      <Drawer.Navigator 
+      screenOptions={{
+        headerStyle: {
+          backgroundColor:"#1974ba",
+          shadowOpacity: 0.85,
+          shadowRadius: 0,
+          shadowOffset: {
+            width: 0,
+            height: 0,
+          },
+        },
+        headerTintColor: '#ed8e00',
+        headerTitleStyle: {
+          fontSize: 20,
+        },
+      }}
+      initialRouteName="Home">
+        <Drawer.Screen name="Holy Quran" component={Home} />
       </Drawer.Navigator>
   );
 }

@@ -36,10 +36,10 @@ const Home = ({ navigation, user }) => {
   return (
     <>
       <View style={styles.container}>
-        <View>
-          <View style={styles.button}>
+        <View style={{borderWidth:1,borderColor:"#1974ba",marginHorizontal:10,paddingVertical:16,borderRadius:10}}>
+          <TouchableOpacity activeOpacity={0.9} onPress={() => navigation.navigate('Juz')} style={styles.button}>
             <Text style={styles.text}>Juz Index</Text>
-          </View>
+          </TouchableOpacity>
           <View style={styles.button}>
             <Text style={styles.text}>Surah Index</Text>
           </View>
