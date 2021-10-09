@@ -40,9 +40,9 @@ const Home = ({ navigation, user }) => {
           <TouchableOpacity activeOpacity={0.9} onPress={() => navigation.navigate('Juz')} style={styles.button}>
             <Text style={styles.text}>Juz Index</Text>
           </TouchableOpacity>
-          <View style={styles.button}>
+          <TouchableOpacity activeOpacity={.8} onPress={() => {navigation.navigate('Surahs')}} style={styles.button}>
             <Text style={styles.text}>Surah Index</Text>
-          </View>
+          </TouchableOpacity>
           <View style={styles.button}>
             <Text style={styles.text}>Go to page#</Text>
           </View>

@@ -1,24 +1,26 @@
+import { ERROR, FETCHED_ALL_SURAHS, FETCHING } from "../constants"
+
 const initialState = {
-  users: [],
+  surahs: [],
   isLoading: false
 }
 
 export const userReducer = (state = initialState, action) => {
   const { payload } = action
   switch (action.type) {
-    case 'FETCH_USER_REQUEST':
+    case FETCHING:
       return {
         ...state,
         isLoading: true
       }
 
-    case 'FETCH_USER_SUCCESS':
+    case FETCHED_ALL_SURAHS:
       return {
         ...state,
-        users: payload,
+        surahs: payload,
         isLoading: false
       }
-    case 'FETCH_USER_FAILED':
+    case ERROR:
       return {
         ...state,
         isLoading: false
