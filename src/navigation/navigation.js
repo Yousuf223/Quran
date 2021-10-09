@@ -7,6 +7,7 @@ import { createStackNavigator } from '@react-navigation/stack'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import Icon from 'react-native-vector-icons/Ionicons'
 import { createDrawerNavigator } from '@react-navigation/drawer'
+import { Surahs } from '../screens/surahs'
 
 const Stack = createStackNavigator()
 const Tab = createBottomTabNavigator()
@@ -38,13 +39,13 @@ const Tab = createBottomTabNavigator()
 //     </Tab.Navigator>
 //   )
 // }
-const Drawer = createDrawerNavigator(); 
-function  App  () {
+const Drawer = createDrawerNavigator();
+function App() {
   return (
-      <Drawer.Navigator 
+    <Drawer.Navigator
       screenOptions={{
         headerStyle: {
-          backgroundColor:"#1974ba",
+          backgroundColor: "#1974ba",
           shadowOpacity: 0.85,
           shadowRadius: 0,
           shadowOffset: {
@@ -58,8 +59,8 @@ function  App  () {
         },
       }}
       initialRouteName="Home">
-        <Drawer.Screen name="Holy Quran" component={Home} />
-      </Drawer.Navigator>
+      <Drawer.Screen name="Holy Quran" component={Home} />
+    </Drawer.Navigator>
   );
 }
 
@@ -75,7 +76,7 @@ const MainNavigation = () => {
             headerShown: false,
           })}
         />
-            <Stack.Screen
+        <Stack.Screen
           name="Juz"
           // options={{ headerShown: false }}
           component={Juz}
@@ -83,6 +84,17 @@ const MainNavigation = () => {
             headerShown: false,
           })}
         />
+
+        <Stack.Screen
+          name="Surahs"
+          // options={{ headerShown: false }}
+          component={Surahs}
+          options={({ navigation }) => ({
+            headerShown: false,
+          })}
+        />
+
+
         {/* add your another screen here using -> Stack.Screen */}
       </Stack.Navigator>
     </NavigationContainer>
