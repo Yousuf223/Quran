@@ -8,6 +8,8 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import Icon from 'react-native-vector-icons/Ionicons'
 import { createDrawerNavigator } from '@react-navigation/drawer'
 import { Surahs } from '../screens/surahs'
+import { backgroundColor, textColor } from '../utils/them'
+import CustomDrawer from './CustomDrawer'
 
 const Stack = createStackNavigator()
 const Tab = createBottomTabNavigator()
@@ -43,9 +45,12 @@ const Drawer = createDrawerNavigator();
 function App() {
   return (
     <Drawer.Navigator
+      drawerContent={CustomDrawer}
+
       screenOptions={{
+        drawerType: "slide",
         headerStyle: {
-          backgroundColor: "#1974ba",
+          backgroundColor: textColor,
           shadowOpacity: 0.85,
           shadowRadius: 0,
           shadowOffset: {
@@ -53,11 +58,14 @@ function App() {
             height: 0,
           },
         },
-        headerTintColor: '#ed8e00',
+        headerTintColor: backgroundColor,
         headerTitleStyle: {
           fontSize: 20,
         },
+        drawerActiveTintColor: textColor,
+        drawerInactiveTintColor: "#fff"
       }}
+
       initialRouteName="Home">
       <Drawer.Screen name="Holy Quran" component={Home} />
     </Drawer.Navigator>

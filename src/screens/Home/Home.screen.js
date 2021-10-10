@@ -10,6 +10,7 @@ import styles from './Home.style'
 import Icon from 'react-native-vector-icons/Ionicons'
 import { connect, useDispatch } from 'react-redux'
 import { fetchDataUser } from '../../stores/actions/user.action'
+import { textColor } from '../../utils/them'
 
 const Home = ({ navigation, user }) => {
   const dispatch = useDispatch()
@@ -36,7 +37,7 @@ const Home = ({ navigation, user }) => {
   return (
     <>
       <View style={styles.container}>
-        <View style={{borderWidth:1,borderColor:"#1974ba",marginHorizontal:10,paddingVertical:16,borderRadius:10}}>
+        <View style={{borderWidth:1,borderColor:textColor,marginHorizontal:10,paddingVertical:16,borderRadius:10}}>
           <TouchableOpacity activeOpacity={0.9} onPress={() => navigation.navigate('Juz')} style={styles.button}>
             <Text style={styles.text}>Juz Index</Text>
           </TouchableOpacity>

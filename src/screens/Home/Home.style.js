@@ -10,11 +10,11 @@ export default StyleSheet.create({
     justifyContent:"center"
   },
   button:{
-    backgroundColor: buttonbackgroundColor,
+    backgroundColor: textColor,
     marginHorizontal:30,
     marginVertical:10,
     paddingVertical:20,
     alignItems: 'center'
   },
-  text: { fontSize: 18, color: textColor, fontWeight: 'bold' }
+  text: { fontSize: 18, color: backgroundColor, fontWeight: 'bold' }
 })

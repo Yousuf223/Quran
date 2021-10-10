@@ -7,7 +7,7 @@ export const getAllSurahs = () => {
   return async dispatch => {
     dispatch({type: FETCHING})
 
-    const { data } = await getApi(BASE_URL+'/surah')
+    const { data } = await getApi(BASE_URL+'/surah',"")
     console.log("data getAllSurahs", data)
     if (data.code == 200) {
         dispatch({type: FETCHED_ALL_SURAHS, payload: data.data})
