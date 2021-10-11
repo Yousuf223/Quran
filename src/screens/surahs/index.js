@@ -13,9 +13,13 @@ export const Surahs = () => {
     }, [])
 
     const surahs = useSelector(state => state.userReducer.surahs)
+    const isLoading = useSelector(state => state.userReducer.isLoading)
 
     return (
-        <View>
+        <View style={{ flex: 1 }}>
+            {isLoading ? <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
+                <Text style={{ fontWeight: "bold", fontSize: 25 }}>Loading...</Text>
+            </View> :
             <FlatList 
                 data={surahs}
                 renderItem={({item, index}) => {
@@ -37,7 +41,7 @@ export const Surahs = () => {
                         </Text>
                     </View>
                 }
-            />
+            />}
         </View>
     )
 } 
@@ -52,6 +56,7 @@ const styles = StyleSheet.create({
         borderRadius: 10
     },
     textStyle: {
-        color: textColor
+        color: textColor,
+        fontSize: 30
     }
 })
